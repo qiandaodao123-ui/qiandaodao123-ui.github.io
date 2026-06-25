@@ -1,0 +1,262 @@
+
+:root {
+  color-scheme: light;
+  --bg: #fbfaf7;
+  --paper: #ffffff;
+  --text: #202124;
+  --muted: #60646c;
+  --line: #ded9cf;
+  --accent: #7a1f1f;
+  --accent-strong: #4e1515;
+  --soft: #f1eee7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 250, 247, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.65fr);
+  gap: 48px;
+  align-items: center;
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(46px, 7vw, 78px);
+  line-height: 0.96;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.affiliation {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.intro {
+  max-width: 740px;
+  margin: 28px 0 0;
+  font-size: 19px;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 28px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+}
+
+.profile-aside {
+  display: grid;
+  gap: 20px;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 58% 36%;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.section {
+  padding: 42px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.interest-list li {
+  padding: 14px 16px;
+  border-left: 3px solid var(--line);
+  background: var(--paper);
+}
+
+.paper-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.paper-list li + li {
+  margin-top: 18px;
+}
+
+.paper-title {
+  display: block;
+  font-weight: 700;
+}
+
+.paper-title a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+}
+
+.paper-title a:hover {
+  color: var(--accent);
+}
+
+.paper-meta {
+  display: block;
+  color: var(--muted);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 44px;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 21px;
+}
+
+.plain-list li + li {
+  margin-top: 13px;
+}
+
+.site-footer {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px 36px;
+  color: var(--muted);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+
+  main {
+    padding-top: 36px;
+  }
+
+  .hero,
+  .interest-list,
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 32px;
+  }
+
+  .profile-photo {
+    max-width: 260px;
+    margin: 0;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+}
